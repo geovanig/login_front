@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Data, Router} from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { AuthService } from '../service/auth.service';
-import { User } from '../model/Usuario';
+import { Usuario } from '../model/Usuario';
 
 @Component({
   selector: 'app-inicio',
@@ -11,7 +11,7 @@ import { User } from '../model/Usuario';
 })
 export class InicioComponent implements OnInit {
 
-  user: User = new User()
+  user: Usuario = new Usuario()
   idUser = environment.id
 
   key: 'data'
@@ -33,7 +33,7 @@ export class InicioComponent implements OnInit {
   }
   
     findByIdUser(){
-      this.authService.getByIdUser(this.idUser).subscribe((resp: User)=>{
+      this.authService.getByIdUser(this.idUser).subscribe((resp: Usuario)=>{
         this.user = resp
       })
     }
