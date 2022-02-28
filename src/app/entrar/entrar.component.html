@@ -3,25 +3,17 @@
         <div class="screen__content">
             <form class="login">
                 <div class="login__field">
-                    <i class="login__icon fas fa-user"></i>
-                    <input type="text" class="login__input" placeholder="Usuário">
+                    <input [(ngModel)]="userLogin.usuario" type="text" class="login__input" placeholder="Usuário">
                 </div>
                 <div class="login__field">
-                    <i class="login__icon fas fa-lock"></i>
-                    <input type="password" class="login__input" placeholder="Senha">
+                    <input [(ngModel)]="userLogin.senha" type="password" class="login__input" placeholder="Senha">
                 </div>
                 <button class="button login__submit">
-                    <span class="button__text"><a href="inicio.html">Logar</a></span>
-                    <i class="button__icon fas fa-chevron-right"></i>
+                    <span class="button__text"><a (click)="entrar()">Logar</a></span>
                 </button>				
             </form>
             <div class="social-login">
                 <h1>Magalu</h1>
-                <div class="social-icons">
-                    <a href="#" class="social-login__icon fab fa-instagram"></a>
-                    <a href="#" class="social-login__icon fab fa-facebook"></a>
-                    <a href="#" class="social-login__icon fab fa-twitter"></a>
-                </div>
             </div>
         </div>
         <div class="screen__background">

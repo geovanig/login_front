@@ -20,12 +20,13 @@ export class EntrarComponent implements OnInit {
   ngOnInit(){
     window.scroll(0,0)
   }
+  
   entrar(){
     this.auth.entrar(this.userLogin).subscribe({
       next: (resp: Login)=>{
       this.userLogin = resp
       environment.token = this.userLogin.token
-      environment.nome = this.userLogin.usuario
+      environment.usuario = this.userLogin.usuario
       environment.id = this.userLogin.id
 
       this.router.navigate(['/inicio'])
